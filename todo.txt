@@ -1,0 +1,5 @@
+TODO shadows on cards
+TODO testing versions of templates
+TODO Qlearn safe versions of all templates (remove all head/footer/body tags, modern css properties, swap in correct image paths, no border-box)
+
+
