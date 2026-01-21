@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{site_title}</title>
+</head>
+
+<div id="main" style="
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:{page_background};
+  color:{text_primary};
+  box-sizing: border-box;
+">
+
+  <!-- HERO -->
+  <div style="
+    background:
+      linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.45)
+      ),
+      url('{hero_image}');
+    background-size:cover;
+    background-position:center;
+    text-align:center;
+    padding:48px 20px 64px;
+    color:{text_inverse};
+  ">
+    <h1 style="
+      margin:0;
+      font-size:clamp(2rem, 4vw, 3rem);
+    ">
+      {site_title}
+    </h1>
+    <p style="
+      margin:12px auto 0;
+      max-width:700px;
+      font-size:1.1em;
+      opacity:0.95;
+    ">
+      Explore each unit to build your French language skills step by step.
+    </p>
+  </div>
+
+{navbar-component}
+
+<!-- UNIT CARDS -->
+{cards-component}
+
+  <!-- FOOTER -->
+  <div style="
+    text-align:center;
+    padding:20px;
+    background:{page_section};
+    color:{text_muted};
+    font-size:0.9em;
+  ">
+    This course supports listening, speaking, reading and writing in French.
+  </div>
+
+</div>
+</html>

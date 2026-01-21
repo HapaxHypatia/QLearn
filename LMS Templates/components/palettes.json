@@ -1,0 +1,314 @@
+{
+  "12": {
+    "label": "Deep Blue",
+
+    "text": {
+      "primary": "#0F172A",
+      "muted": "#475569",
+      "inverse": "#F8FAFC"
+    },
+
+    "page": {
+      "background": "#F8FAFC",
+      "section": "#E5EEF7",
+      "card": "#FFFFFF",
+      "border": "#CBD5E1"
+    },
+
+    "links": {
+      "default": "#1D4ED8"
+    },
+
+    "buttons": {
+      "primary": "#1D4ED8",
+      "secondary": "#93C5FD",
+      "secondary_text": "#0F172A"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#38BDF8"
+    },
+
+    "navbar": {
+      "background": "#0F172A",
+      "button_default": "#1E293B",
+      "button_primary": "#1D4ED8",
+      "button_dropdown": "#3B82F6",
+      "border": "#334155",
+      "shadow": "rgba(29,78,216,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#CBD5E1",
+      "panel_header": "#E5EEF7",
+      "panel_header_text": "#0F172A",
+      "editable_background": "#F8FAFC",
+      "editable_border": "#94A3B8"
+    }
+  },
+
+  "11": {
+    "label": "Forest Green",
+
+    "text": {
+      "primary": "#052E16",
+      "muted": "#3F5F4F",
+      "inverse": "#ECFDF5"
+    },
+
+    "page": {
+      "background": "#F7FBF9",
+      "section": "#E6F4EC",
+      "card": "#FFFFFF",
+      "border": "#B7E4C7"
+    },
+
+    "links": {
+      "default": "#15803D"
+    },
+
+    "buttons": {
+      "primary": "#15803D",
+      "secondary": "#86EFAC",
+      "secondary_text": "#052E16"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#CA8A04",
+      "error": "#B91C1C",
+      "info": "#22C55E"
+    },
+
+    "navbar": {
+      "background": "#052E16",
+      "button_default": "#14532D",
+      "button_primary": "#15803D",
+      "button_dropdown": "#22C55E",
+      "border": "#166534",
+      "shadow": "rgba(21,128,61,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#B7E4C7",
+      "panel_header": "#E6F4EC",
+      "panel_header_text": "#052E16",
+      "editable_background": "#F7FBF9",
+      "editable_border": "#6FAF8E"
+    }
+  },
+
+  "10": {
+    "label": "Burnt Orange",
+
+    "text": {
+      "primary": "#431407",
+      "muted": "#7C2D12",
+      "inverse": "#FFF7ED"
+    },
+
+    "page": {
+      "background": "#FFFBF7",
+      "section": "#FFF1E6",
+      "card": "#FFFFFF",
+      "border": "#FED7AA"
+    },
+
+    "links": {
+      "default": "#EA580C"
+    },
+
+    "buttons": {
+      "primary": "#EA580C",
+      "secondary": "#FDBA74",
+      "secondary_text": "#431407"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#FB923C"
+    },
+
+    "navbar": {
+      "background": "#431407",
+      "button_default": "#7C2D12",
+      "button_primary": "#EA580C",
+      "button_dropdown": "#FB923C",
+      "border": "#9A3412",
+      "shadow": "rgba(234,88,12,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#FED7AA",
+      "panel_header": "#FFF1E6",
+      "panel_header_text": "#431407",
+      "editable_background": "#FFFBF7",
+      "editable_border": "#FDBA74"
+    }
+  },
+
+  "09": {
+    "label": "Royal Purple",
+
+    "text": {
+      "primary": "#2E1065",
+      "muted": "#5B21B6",
+      "inverse": "#FAF5FF"
+    },
+
+    "page": {
+      "background": "#FBFAFF",
+      "section": "#F3E8FF",
+      "card": "#FFFFFF",
+      "border": "#DDD6FE"
+    },
+
+    "links": {
+      "default": "#7C3AED"
+    },
+
+    "buttons": {
+      "primary": "#7C3AED",
+      "secondary": "#C4B5FD",
+      "secondary_text": "#2E1065"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#A855F7"
+    },
+
+    "navbar": {
+      "background": "#2E1065",
+      "button_default": "#4C1D95",
+      "button_primary": "#7C3AED",
+      "button_dropdown": "#A78BFA",
+      "border": "#5B21B6",
+      "shadow": "rgba(124,58,237,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#DDD6FE",
+      "panel_header": "#F3E8FF",
+      "panel_header_text": "#2E1065",
+      "editable_background": "#FBFAFF",
+      "editable_border": "#C4B5FD"
+    }
+  },
+
+  "08": {
+    "label": "Crimson Red",
+
+    "text": {
+      "primary": "#450A0A",
+      "muted": "#7F1D1D",
+      "inverse": "#FEF2F2"
+    },
+
+    "page": {
+      "background": "#FFF8F8",
+      "section": "#FEE2E2",
+      "card": "#FFFFFF",
+      "border": "#FECACA"
+    },
+
+    "links": {
+      "default": "#B91C1C"
+    },
+
+    "buttons": {
+      "primary": "#B91C1C",
+      "secondary": "#FCA5A5",
+      "secondary_text": "#450A0A"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#B91C1C",
+      "info": "#EF4444"
+    },
+
+    "navbar": {
+      "background": "#450A0A",
+      "button_default": "#7F1D1D",
+      "button_primary": "#B91C1C",
+      "button_dropdown": "#EF4444",
+      "border": "#991B1B",
+      "shadow": "rgba(185,28,28,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#FECACA",
+      "panel_header": "#FEE2E2",
+      "panel_header_text": "#450A0A",
+      "editable_background": "#FFF8F8",
+      "editable_border": "#FCA5A5"
+    }
+  },
+
+  "07": {
+    "label": "Teal Cyan",
+
+    "text": {
+      "primary": "#042F2E",
+      "muted": "#134E4A",
+      "inverse": "#ECFEFF"
+    },
+
+    "page": {
+      "background": "#F5FEFD",
+      "section": "#D1FAF5",
+      "card": "#FFFFFF",
+      "border": "#99F6E4"
+    },
+
+    "links": {
+      "default": "#0D9488"
+    },
+
+    "buttons": {
+      "primary": "#0D9488",
+      "secondary": "#5EEAD4",
+      "secondary_text": "#042F2E"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#06B6D4"
+    },
+
+    "navbar": {
+      "background": "#042F2E",
+      "button_default": "#134E4A",
+      "button_primary": "#0D9488",
+      "button_dropdown": "#2DD4BF",
+      "border": "#0F766E",
+      "shadow": "rgba(13,148,136,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#99F6E4",
+      "panel_header": "#D1FAF5",
+      "panel_header_text": "#042F2E",
+      "editable_background": "#F5FEFD",
+      "editable_border": "#5EEAD4"
+
+    }
+  }
+}

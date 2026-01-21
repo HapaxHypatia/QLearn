@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{site_title}</title>
+</head>
+
+<div id="main" style="
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background:{page_background};
+  color:{text_primary};
+  box-sizing: border-box;
+">
+
+
+{navbar-component}
+
+<main style="padding:20px; max-width:1100px; margin:auto;">
+
+  <section style="
+    background:{page_section};
+    border:1px solid {page_border};
+    border-radius:14px;
+    padding:24px;
+    margin-bottom:24px;
+  ">
+
+    <h1 style="margin-top:0;">Page Heading</h1>
+
+    <p style="color:{text_muted};">
+      Page Intro
+    </p>
+
+  </section>
+
+  <div style="
+    background:{page_card};
+    border:1px solid {page_border};
+    border-radius:14px;
+    padding:20px;
+    margin-bottom:20px;
+  ">
+
+    <h2>Section Title</h2>
+
+    <p>
+      Section content
+    </p>
+
+    <a href="#" style="
+      display:inline-block;
+      margin-top:12px;
+      padding:12px 20px;
+      background:{buttons_primary};
+      color:#ffffff;
+      text-decoration:none;
+      border-radius:10px;
+      font-weight:600;
+    ">Button Text</a>
+
+  </div>
+
+  <div style="
+    background:{page_section};
+    border-left:6px solid {links_default};
+    border-radius:10px;
+    padding:16px;
+    margin-bottom:20px;
+  ">
+
+    <strong>Note:</strong> Callout Text
+
+  </div>
+
+</main>
+
+<div id="footer" style="
+  margin:20px;
+  padding:16px;
+  text-align:center;
+  color:{text_muted};
+  font-size:14px;
+">
+  Footer Text
+</div>
+
+</div>
+</html>

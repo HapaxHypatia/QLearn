@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BasePage</title>
+</head>
+<body>
+
+<!-- HAMBURGER NAV -->
+<details style="
+  background:#111827;
+  color:#f9fafb;
+  padding:15px;
+  border-radius:14px;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  margin-top: 15px;
+  margin-bottom: 15px;
+">
+
+  <!-- TOGGLE -->
+  <summary style="
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:600;
+  ">
+    <span>Course navigation</span>
+    <span style="font-size:20px;">☰</span>
+  </summary>
+<div id="navbar" style="
+  background:#111827;
+  color:#f9fafb;
+  padding: 5px;
+  border-radius:14px;
+  font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+">
+  <div style="display:flex; flex-wrap:wrap; gap:12px;">
+    <a href="#" style="display:inline-block;padding:12px 18px;background:#1f2937;color:#f9fafb;text-decoration:none;border-radius:10px;border:1px solid #374151;box-shadow:0 2px 6px rgba(0,0,0,.4);font-weight:500;">Course home</a>
+    <a href="#" style="display:inline-block;padding:12px 18px; background:#1f2937; color:#f9fafb; text-decoration:none; border-radius:10px; border:1px solid #374151; box-shadow:0 2px 6px rgba(0,0,0,.4); font-weight:500;">Class Page</a>
+    <a href="#" style="text-align: center; display:inline-block;padding:12px 18px; background:#4f46e5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Assessment</a>
+    <details name="requirements" style="min-width: 200px; text-align: center; cursor: pointer;">
+      <summary style="padding:12px 18px; background:#4f46e5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">
+        <span style="margin-left: 5px">Units</span>
+      </summary>
+        <div style="padding-top: 5px">
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Unit 1</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Unit 2</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Unit 3</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Unit 4</a>
+      </div>
+    </details>
+    <details name="requirements" style="min-width: 200px; text-align: center;cursor: pointer;">
+      <summary style="padding:12px 18px; background:#4f46e5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">
+        <span style="margin-left: 5px">General Resources</span>
+      </summary>
+      <div style="padding-top: 5px">
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Grammar</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Cultural</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Extension</a>
+        <a href="#" style="display:inline-block;padding:12px 18px; background:#468EE5; color:#ffffff; text-decoration:none; border-radius:10px; border:1px solid #4338ca; box-shadow:0 3px 8px rgba(79,70,229,.5); font-weight:600;">Revision</a>
+      </div>
+    </details>
+  </div>
+</div>
+</details>
+
+
+
+<!--Breadcrumbs-->
+<div style="
+    font-size:14px;
+    margin-bottom:16px;
+    color:#374151;
+    font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;  ">
+
+    <a href="[COURSE HOME LINK]" style="
+      color:#4f46e5;
+      text-decoration:none;
+      font-weight:500;
+      ">Course home
+    </a>
+
+    <span style="margin:0 6px;">›</span>
+
+    <a href="[UNIT PAGE LINK]" style="
+      color:#4f46e5;
+      text-decoration:none;
+      font-weight:500;
+      ">Unit name
+    </a>
+
+    <span style="margin:0 6px;">›</span>
+
+    <a href="[UNIT SECTION LINK]" style="
+      color:#4f46e5;
+      text-decoration:none;
+      font-weight:500;
+      ">Topic name
+    </a>
+
+    <span style="margin:0 6px;">›</span>
+
+    <span style="font-weight:600; color:#111827;">
+      Page name
+    </span>
+</div>
+
+<!--Page Container-->
+<div id="page" style="
+    font-family: Arial, sans-serif;
+    font-size: 16px; /* Base font size */
+    line-height: 1.5;box-sizing: border-box;">
+
+<!--  Content Container-->
+  <div id="main-content" style="
+                              margin: auto;
+                              width: 90%;
+                              ">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet ipsum vel ligula lobortis tincidunt eu ut libero. Nunc vel sem ornare, auctor diam vel, eleifend risus. Nunc eleifend turpis nulla, eu rutrum arcu congue vitae. Morbi orci dui, congue non imperdiet vitae, fermentum et felis. Nulla a bibendum nulla. Donec consequat ante lorem, tincidunt feugiat felis porttitor a. Fusce ex ligula, ornare id rutrum sit amet, tincidunt vitae est. Cras hendrerit ligula in malesuada varius. Vestibulum mollis malesuada ligula, eget semper ipsum dignissim non. Pellentesque pharetra tellus quis ligula ornare eleifend. Phasellus et ultricies neque. Vivamus posuere diam vel vulputate aliquet.
+    Mauris mi mi, maximus ut velit ut, faucibus vulputate augue. Ut ultrices in lorem eu tincidunt. In non lorem urna. Pellentesque luctus feugiat mauris, vitae sollicitudin turpis rutrum quis. Vestibulum elit sapien, finibus eget euismod vitae, varius ac eros. Phasellus vitae nulla et orci finibus volutpat sit amet in leo. Integer consequat, elit eget lobortis elementum, erat nibh sagittis lectus, eget fringilla risus arcu vel erat. Proin magna sem, euismod tincidunt neque eget, fermentum hendrerit nisi.
+    Pellentesque finibus luctus lorem id molestie. Integer finibus congue ante, nec congue mauris ornare ut. Duis rutrum elit a lectus congue, eget convallis magna tristique. Fusce sed aliquet diam. Mauris rutrum orci sit amet elit tincidunt, nec pharetra mauris aliquet. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean faucibus sed arcu sed consectetur. Interdum et malesuada fames ac ante ipsum primis in faucibus. In hac habitasse platea dictumst. Maecenas augue ex, iaculis eu velit et, blandit euismod ipsum. Maecenas dapibus tellus at odio lobortis, quis varius felis tincidunt. Ut ipsum leo, gravida sit amet nunc non, ullamcorper rhoncus mi. Vestibulum nec nulla non nunc elementum pulvinar eget fermentum odio. Cras quis quam ornare, lobortis orci non, porta tellus. Nullam id magna leo.
+    Integer sed dictum enim. Etiam turpis dui, luctus nec vehicula scelerisque, egestas non mauris. Donec mattis metus eget turpis ornare varius. Praesent semper at ex a feugiat. Sed semper lectus suscipit purus fringilla, eu dapibus mi placerat. Praesent vitae augue dictum, interdum ex pellentesque, vulputate ipsum. Praesent quis nibh ipsum. Phasellus eu neque dolor.
+    Aliquam ultrices mi blandit augue lobortis mollis. Etiam quis orci faucibus, accumsan odio id, euismod risus. Praesent rutrum risus id facilisis commodo. Maecenas at magna molestie, lacinia leo sit amet, accumsan eros. Vivamus pulvinar eget lacus laoreet molestie. Sed maximus porta est sit amet porta. Cras eget elit ut neque gravida consectetur blandit ac arcu. Duis non metus elementum, molestie lorem eu, tempus massa. Phasellus vel facilisis orci. Aliquam eu aliquet nulla. Maecenas id risus at mi mattis rhoncus. Nullam sagittis feugiat leo eu lobortis. Phasellus ornare nunc vel varius feugiat. Curabitur id pulvinar nisl.
+  </div>
+</div>
+</body>
+</html>
+

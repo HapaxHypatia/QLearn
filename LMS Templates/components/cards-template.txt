@@ -1,0 +1,120 @@
+
+  <div id="card-container" style="
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    gap: 24px;
+    padding: 32px 20px 48px;
+  ">
+
+    <!-- UNIT 1 -->
+    <div style="
+      flex: 0 0 calc(50% - 12px);
+      background: {page_card};
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow:0 12px 26px rgba(0,0,0,0.25);
+
+    ">
+      <a href="{units_unit 1_url}" style="text-decoration: none;">
+        <img
+          src="{units_unit 1_image}"
+          alt="{units_unit 1_title}"
+          style="width: 100%; height: 180px; object-fit: cover; display: block;"
+        />
+      </a>
+      <div style="padding: 18px; color: {text_primary};">
+        <h3 style="margin: 0 0 8px 0;">
+          <strong>{units_unit 1_title}</strong>
+        </h3>
+        <p style="margin: 0; color: {text_muted};">
+          {units_unit 1_desc}
+        </p>
+      </div>
+    </div>
+
+    <!-- UNIT 2 -->
+    <div style="
+      flex: 0 0 calc(50% - 12px);
+      background: {page_card};
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow:0 12px 26px rgba(0,0,0,0.25);
+    ">
+      <a href="{units_unit 2_url}" style="text-decoration: none;">
+        <img
+          src="{units_unit 2_image}"
+          alt="{units_unit 2_title}"
+          style="width: 100%; height: 180px; object-fit: cover; display: block;"
+        />
+      </a>
+      <div style="padding: 18px; color: {text_primary};">
+        <h3 style="margin: 0 0 8px 0;">
+          <strong>{units_unit 2_title}</strong>
+        </h3>
+        <p style="margin: 0; color: {text_muted};">
+          {units_unit 2_desc}
+        </p>
+      </div>
+    </div>
+
+    <!-- UNIT 3 -->
+    <div style="
+      flex: 0 0 calc(50% - 12px);
+      background: {page_card};
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow:0 12px 26px rgba(0,0,0,0.25);
+    ">
+      <a href="{units_unit 3_url}" style="text-decoration: none;">
+        <img
+          src="{units_unit 3_image}"
+          alt="{units_unit 3_title}"
+          style="width: 100%; height: 180px; object-fit: cover; display: block;"
+        />
+      </a>
+      <div style="padding: 18px; color: {text_primary};">
+        <h3 style="margin: 0 0 8px 0;">
+          <strong>{units_unit 3_title}</strong>
+        </h3>
+        <p style="margin: 0; color: {text_muted};">
+          {units_unit 3_desc}
+        </p>
+      </div>
+    </div>
+
+    <!-- UNIT 4 -->
+    <div style="
+      flex: 0 0 calc(50% - 12px);
+      background: {page_card};
+      border-radius: 18px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow:0 12px 26px rgba(0,0,0,0.25);
+    ">
+      <a href="{units_unit 4_url}" style="text-decoration: none;">
+        <img
+          src="{units_unit 4_image}"
+          alt="{units_unit 4_title}"
+          style="width: 100%; height: 180px; object-fit: cover; display: block;"
+        />
+      </a>
+      <div style="padding: 18px; color: {text_primary};">
+        <h3 style="margin: 0 0 8px 0;">
+          <strong>{units_unit 4_title}</strong>
+        </h3>
+        <p style="margin: 0; color: {text_muted};">
+          {units_unit 4_desc}
+        </p>
+      </div>
+    </div>
+
+  </div>

@@ -1,0 +1,195 @@
+<!-- ===================== -->
+<!-- HAMBURGER NAVIGATION -->
+<!-- ===================== -->
+
+<details style="
+  background:{navbar_background};
+  color:{text_inverse};
+  padding:15px;
+  border-radius:14px;
+  margin:15px;
+">
+
+  <summary style="
+    list-style:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    font-weight:400;
+    font-size: xx-large;
+  ">
+    <span>Course Navigation</span>
+    <span style="font-size:20px;">☰</span>
+  </summary>
+
+  <div id="navbar" style="
+    background:{navbar_background};
+    color:{text_inverse};
+    padding:8px;
+    border-radius:14px;
+    margin-top:10px;
+  ">
+
+    <div style="
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    ">
+
+      <a href="{nav_home_url}" style="
+        display:inline-block;
+        padding:12px 18px;
+        background:{navbar_button_default};
+        color:{text_inverse};
+        text-decoration:none;
+        border-radius:10px;
+        border:1px solid {navbar_border};
+        font-weight:400;
+      ">Course Home</a>
+
+      <a href="{nav_class_url}" style="
+        display:inline-block;
+        padding:12px 18px;
+        background:{navbar_button_default};
+        color:{text_inverse};
+        text-decoration:none;
+        border-radius:10px;
+        border:1px solid {navbar_border};
+        font-weight:400;
+      ">Class Page</a>
+
+      <a href="{nav_assessment_url}" style="
+        display:inline-block;
+        padding:12px 18px;
+        background:{navbar_button_primary};
+        color:#ffffff;
+        text-decoration:none;
+        border-radius:10px;
+        border:1px solid {navbar_border};
+        font-weight:400;
+        text-align:center;
+      ">Assessment</a>
+
+      <details style="min-width:200px; text-align:center;">
+        <summary style="
+          padding:12px 18px;
+          background:{navbar_button_primary};
+          color:#ffffff;
+          border-radius:10px;
+          border:1px solid {navbar_border};
+          font-weight:400;
+          cursor:pointer;
+        ">Units</summary>
+
+        <div style="padding-top:6px;">
+
+          <a href="{units_unit 1_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Unit 1</a>
+
+          <a href="{units_unit 2_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Unit 2</a>
+
+          <a href="{units_unit 3_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Unit 3</a>
+
+          <a href="{units_unit 4_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Unit 4</a>
+
+        </div>
+      </details>
+      <details style="min-width:200px; text-align:center;">
+        <summary style="
+          padding:12px 18px;
+          background:{navbar_button_primary};
+          color:#ffffff;
+          border-radius:10px;
+          border:1px solid {navbar_border};
+          font-weight:400;
+          cursor:pointer;
+        ">Resources</summary>
+
+        <div style="padding-top:6px;">
+
+          <a href="{grammar_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Grammar</a>
+
+          <a href="{cultural_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Cultural</a>
+
+          <a href="{revision_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Revision</a>
+
+          <a href="{extension_url}" style="
+            display:inline-block;
+            padding:12px 18px;
+            background:{navbar_button_dropdown};
+            color:#ffffff;
+            text-decoration:none;
+            border-radius:10px;
+            border:1px solid {navbar_border};
+            font-weight:400;
+          ">Extension</a>
+
+        </div>
+      </details>
+
+    </div>
+  </div>
+</details>
