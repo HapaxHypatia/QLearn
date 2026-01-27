@@ -1,0 +1,32 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="false" level="WARNING" enabled_by_default="false">
+      <option name="ignoredPackages">
+        <list>
+          <option value="altgraph" />
+          <option value="audioread" />
+          <option value="docopt" />
+          <option value="ffmpeg-python" />
+          <option value="future" />
+          <option value="huggingface-hub" />
+          <option value="Nuitka" />
+          <option value="ordered-set" />
+          <option value="packaging" />
+          <option value="pefile" />
+          <option value="pipreqs" />
+          <option value="pyinstaller" />
+          <option value="pyinstaller-hooks-contrib" />
+          <option value="pywin32-ctypes" />
+          <option value="PyYAML" />
+          <option value="safetensors" />
+          <option value="tokenizers" />
+          <option value="transformers" />
+          <option value="yarg" />
+          <option value="zstandard" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
