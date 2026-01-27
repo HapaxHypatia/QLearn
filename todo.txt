@@ -7,5 +7,5 @@ TODO Cards template for 2 cards only
 TODO images for each course and unit
 TODO cards only linked on image not caption
 
-
+TODO Images don't scale properly because object fit and background size properties are stripped
 
