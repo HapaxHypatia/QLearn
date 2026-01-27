@@ -1,15 +1,11 @@
-TODO testing versions of templates & qlearn versions (with correct links)
-TODO Qlearn safe versions of all templates (remove all head/footer/body tags, modern css properties, swap in correct image paths, no border-box)
+TODO testing versions of templates (with local links & html header)
 TODO Unit page templates
 TODO Assessment page templates
 TODO lesson/activity page templates
-TODO fix up class page
+
 TODO Cards template for 2 cards only
 TODO images for each course and unit
 TODO cards only linked on image not caption
-
-
-TODO units codes have changed in new csv, update
 
 
 

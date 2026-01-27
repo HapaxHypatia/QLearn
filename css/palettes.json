@@ -207,6 +207,58 @@
     }
   },
 
+  "092": {
+    "label": "Royal Purple",
+
+    "text": {
+      "primary": "#2E1065",
+      "muted": "#5B21B6",
+      "inverse": "#FAF5FF"
+    },
+
+    "page": {
+      "background": "#FBFAFF",
+      "section": "#F3E8FF",
+      "card": "#FFFFFF",
+      "border": "#DDD6FE"
+    },
+
+    "links": {
+      "default": "#7C3AED"
+    },
+
+    "buttons": {
+      "primary": "#7C3AED",
+      "secondary": "#C4B5FD",
+      "secondary_text": "#2E1065"
+    },
+
+    "feedback": {
+      "success": "#16A34A",
+      "warning": "#F59E0B",
+      "error": "#DC2626",
+      "info": "#A855F7"
+    },
+
+    "navbar": {
+      "background": "#2E1065",
+      "button_default": "#4C1D95",
+      "button_primary": "#7C3AED",
+      "button_dropdown": "#A78BFA",
+      "border": "#5B21B6",
+      "shadow": "rgba(124,58,237,0.45)"
+    },
+
+    "class": {
+      "panel_background": "#FFFFFF",
+      "panel_border": "#DDD6FE",
+      "panel_header": "#F3E8FF",
+      "panel_header_text": "#2E1065",
+      "editable_background": "#FBFAFF",
+      "editable_border": "#C4B5FD"
+    }
+  },
+
   "08": {
     "label": "Crimson Red",
 

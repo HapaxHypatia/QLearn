@@ -17,9 +17,9 @@
     align-items:center;
     justify-content:space-between;
     font-weight:400;
-    font-size: xx-large;
+    font-size: large;
   ">
-    <span>Course Navigation</span>
+    <span>{course_title}</span>
     <span style="font-size:20px;">☰</span>
   </summary>
 
@@ -71,7 +71,7 @@
         text-align:center;
       ">Assessment</a>
 
-      <details style="min-width:200px; text-align:center;">
+      <details name="requirements" style="min-width:200px; text-align:center;">
         <summary style="
           padding:12px 18px;
           background:{navbar_button_primary};
@@ -130,7 +130,7 @@
 
         </div>
       </details>
-      <details style="min-width:200px; text-align:center;">
+      <details name="requirements" style="min-width:200px; text-align:center;">
         <summary style="
           padding:12px 18px;
           background:{navbar_button_primary};

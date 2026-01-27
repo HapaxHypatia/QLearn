@@ -81,16 +81,18 @@ if __name__ == "__main__":
         course_styles = palettes[data["style_code"]]
         styles_flat = flatten_dict(course_styles)
 
+        code = data["style_code"]
+
         # Generate homepage
-        html_home = generate_page(data["style_code"], "home", styles_flat , data)
+        html_home = generate_page(code, "home", styles_flat , data)
 
         # # Generate default page
-        # html_default = generate_page(course_id, "default", styles_flat , data)
+        html_default = generate_page(code, "default", styles_flat , data)
         #
         # Generate class page
-        html_class = generate_page(data["style_code"], "class", styles_flat , data)
+        html_class = generate_page(code, "class", styles_flat , data)
         #
         # # Generate unit page
-        # html_unit = generate_page(course_id, "unit", styles_flat , data)
+        html_unit = generate_page(code, "unit", styles_flat , data)
 
     # print("All pages generated successfully.")
