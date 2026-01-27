@@ -60,12 +60,11 @@ def generate_page(course_id, page_type, palettes, sitedata, templates_dir="./LMS
 # Main script
 # -------------------------
 if __name__ == "__main__":
-    templates_dir = "./LMS Templates"
 
     # Load palettes and sitedata once
-    with open(os.path.join(templates_dir, "components/palettes.json"), encoding="utf-8") as f:
+    with open(os.path.join("css/palettes.json"), encoding="utf-8") as f:
         palettes = json.load(f)
-    with open(os.path.join(templates_dir, "components/sitedata.json"), encoding="utf-8") as f:
+    with open(os.path.join("data/sitedata.json"), encoding="utf-8") as f:
         sitedata = json.load(f)
 
     # List of course IDs to generate
@@ -74,15 +73,15 @@ if __name__ == "__main__":
     for course_id in course_ids:
 
         # Generate homepage
-        html_home = generate_page(course_id, "home", palettes, sitedata, templates_dir)
+        html_home = generate_page(course_id, "home", palettes, sitedata)
 
         # Generate default page
-        html_default = generate_page(course_id, "default", palettes, sitedata, templates_dir)
+        html_default = generate_page(course_id, "default", palettes, sitedata)
 
         # Generate class page
-        html_class = generate_page(course_id, "class", palettes, sitedata, templates_dir)
+        html_class = generate_page(course_id, "class", palettes, sitedata)
 
         # # Generate unit page
-        # html_unit = generate_page(course_id, "unit", palettes, sitedata, templates_dir)
+        # html_unit = generate_page(course_id, "unit", palettes, sitedata)
 
     print("All pages generated successfully.")

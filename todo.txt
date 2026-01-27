@@ -1,5 +1,12 @@
-TODO shadows on cards
-TODO testing versions of templates
+TODO testing versions of templates & qlearn versions (with correct links)
 TODO Qlearn safe versions of all templates (remove all head/footer/body tags, modern css properties, swap in correct image paths, no border-box)
+TODO Unit page templates
+TODO Assessment page templates
+TODO lesson/activity page templates
+TODO fix up class page
+TODO Don't hide navbar on homepage
+TODO Cards template for 2 cards only
+TODO images for each course and unit
+
 
 
