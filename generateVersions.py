@@ -1,5 +1,7 @@
 import json
 import os
+import csv
+
 
 def flatten_dict(d, parent_key="", sep="_"):
     """
@@ -21,15 +23,15 @@ def save_page(html, filename):
   with open(filename, "w", encoding="utf-8") as f:
     f.write(html)
 
-def generate_component(component_type, palettes, sitedata, templates_dir="./LMS Templates"):
+def generate_component(component_type, component_styles, course_data, templates_dir="./LMS Templates"):
     template_file = os.path.join(templates_dir, f"components/{component_type}-template.txt")
     with open(template_file, encoding="utf-8") as f:
       template = f.read()
-      html = template.format(**sitedata, **palettes)
+      html = template.format(**course_data, **component_styles)
     return html
 
 
-def generate_page(course_id, page_type, palettes, sitedata, templates_dir="./LMS Templates"):
+def generate_page(course_id, page_type, styles, data, templates_dir="./LMS Templates"):
     """
     Generates a page for a given course_id and page_type ('home' or 'default').
     Returns the fully formatted HTML as a string.
@@ -39,15 +41,12 @@ def generate_page(course_id, page_type, palettes, sitedata, templates_dir="./LMS
     with open(template_file, encoding="utf-8") as f:
         template = f.read()
 
-    palette_flat = flatten_dict(palettes[course_id])
-    data_flat = flatten_dict(sitedata[course_id])
-
     # Create standard components
-    data_flat["navbar-component"] = generate_component("navbar", palette_flat, data_flat, templates_dir)
-    data_flat["cards-component"] = generate_component("cards", palette_flat, data_flat, templates_dir)
+    data["navbar-component"] = generate_component("navbar", styles, data, templates_dir)
+    data["cards-component"] = generate_component("cards", styles, data, templates_dir)
 
-    # Format the template with flattened palette and site data
-    html = template.format(**data_flat, **palette_flat)
+    # Format the template with palette and site data
+    html = template.format(**data, **styles)
 
     # Save page
     filename = f"LMS Templates/{course_id}/{course_id}_{page_type}.html"
@@ -62,26 +61,36 @@ def generate_page(course_id, page_type, palettes, sitedata, templates_dir="./LMS
 if __name__ == "__main__":
 
     # Load palettes and sitedata once
+    sitedata = {}
+    with open('data/coursedata.csv', 'r',  encoding='utf-8-sig') as f:
+      dict_reader = csv.DictReader(f)
+      headers = dict_reader.fieldnames
+      for line in dict_reader:
+        course_id = line["course_id"]
+        sitedata[course_id] = {}
+        for header in headers[1:]:
+          sitedata[course_id][header] = line[header]
+
     with open(os.path.join("css/palettes.json"), encoding="utf-8") as f:
         palettes = json.load(f)
-    with open(os.path.join("data/sitedata.json"), encoding="utf-8") as f:
-        sitedata = json.load(f)
 
-    # List of course IDs to generate
-    course_ids = ["07", "08", "09", "10", "11", "12"]
+    course_ids = [x for x in sitedata.keys()]
 
     for course_id in course_ids:
+        data = sitedata[course_id]
+        course_styles = palettes[data["style_code"]]
+        styles_flat = flatten_dict(course_styles)
 
         # Generate homepage
-        html_home = generate_page(course_id, "home", palettes, sitedata)
+        html_home = generate_page(data["style_code"], "home", styles_flat , data)
 
-        # Generate default page
-        html_default = generate_page(course_id, "default", palettes, sitedata)
-
+        # # Generate default page
+        # html_default = generate_page(course_id, "default", styles_flat , data)
+        #
         # Generate class page
-        html_class = generate_page(course_id, "class", palettes, sitedata)
-
+        html_class = generate_page(data["style_code"], "class", styles_flat , data)
+        #
         # # Generate unit page
-        # html_unit = generate_page(course_id, "unit", palettes, sitedata)
+        # html_unit = generate_page(course_id, "unit", styles_flat , data)
 
-    print("All pages generated successfully.")
+    # print("All pages generated successfully.")

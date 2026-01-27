@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{site_title} – Class Page</title>
+  <title>{course_title} – Class Page</title>
 </head>
 <div id="main" style="
   margin:0;
@@ -29,7 +29,7 @@
   <!-- TITLE -->
   <!-- ========= -->
 
-  <h1 style="margin-top:0; text-align:center;">{site_title} - Class Page</h1>
+  <h1 style="margin-top:0; text-align:center;">{course_title} - Class Page</h1>
 
   <!-- ========================== -->
   <!-- TEACHER & CLASS INFO -->

@@ -19,19 +19,19 @@
       border-style: outset; border-width: 0px 5px 5px 0px; border-color: rgba(0,0,0,0.25);
 
     ">
-      <a href="{units_unit 1_url}" style="text-decoration: none;">
+      <a href="{unit1_url}" style="text-decoration: none;">
         <img
-          src="{units_unit 1_image}"
-          alt="{units_unit 1_title}"
+          src="{unit1_image_qlearn}"
+          alt="{unit1_title}"
           style="width: 100%; height: 180px; object-fit: cover; display: block;"
         />
       </a>
       <div style="padding: 18px; color: {text_primary};">
         <h3 style="margin: 0 0 8px 0;">
-          <strong>{units_unit 1_title}</strong>
+          <strong>{unit1_title}</strong>
         </h3>
         <p style="margin: 0; color: {text_muted};">
-          {units_unit 1_desc}
+          {unit1_desc}
         </p>
       </div>
     </div>
@@ -46,19 +46,19 @@
       flex-direction: column;
       border-style: outset; border-width: 0px 5px 5px 0px; border-color: rgba(0,0,0,0.25);
     ">
-      <a href="{units_unit 2_url}" style="text-decoration: none;">
+      <a href="{unit2_url}" style="text-decoration: none;">
         <img
-          src="{units_unit 2_image}"
-          alt="{units_unit 2_title}"
+          src="{unit2_image_qlearn}"
+          alt="{unit2_title}"
           style="width: 100%; height: 180px; object-fit: cover; display: block;"
         />
       </a>
       <div style="padding: 18px; color: {text_primary};">
         <h3 style="margin: 0 0 8px 0;">
-          <strong>{units_unit 2_title}</strong>
+          <strong>{unit2_title}</strong>
         </h3>
         <p style="margin: 0; color: {text_muted};">
-          {units_unit 2_desc}
+          {unit2_desc}
         </p>
       </div>
     </div>
@@ -73,19 +73,19 @@
       flex-direction: column;
       border-style: outset; border-width: 0px 5px 5px 0px; border-color: rgba(0,0,0,0.25);
     ">
-      <a href="{units_unit 3_url}" style="text-decoration: none;">
+      <a href="{unit3_url}" style="text-decoration: none;">
         <img
-          src="{units_unit 3_image}"
-          alt="{units_unit 3_title}"
+          src="{unit3_image_qlearn}"
+          alt="{unit3_title}"
           style="width: 100%; height: 180px; object-fit: cover; display: block;"
         />
       </a>
       <div style="padding: 18px; color: {text_primary};">
         <h3 style="margin: 0 0 8px 0;">
-          <strong>{units_unit 3_title}</strong>
+          <strong>{unit3_title}</strong>
         </h3>
         <p style="margin: 0; color: {text_muted};">
-          {units_unit 3_desc}
+          {unit3_desc}
         </p>
       </div>
     </div>
@@ -100,19 +100,19 @@
       flex-direction: column;
       border-style: outset; border-width: 0px 5px 5px 0px; border-color: rgba(0,0,0,0.25);
     ">
-      <a href="{units_unit 4_url}" style="text-decoration: none;">
+      <a href="{unit4_url}" style="text-decoration: none;">
         <img
-          src="{units_unit 4_image}"
-          alt="{units_unit 4_title}"
+          src="{unit4_image_qlearn}"
+          alt="{unit4_title}"
           style="width: 100%; height: 180px; object-fit: cover; display: block;"
         />
       </a>
       <div style="padding: 18px; color: {text_primary};">
         <h3 style="margin: 0 0 8px 0;">
-          <strong>{units_unit 4_title}</strong>
+          <strong>{unit4_title}</strong>
         </h3>
         <p style="margin: 0; color: {text_muted};">
-          {units_unit 4_desc}
+          {unit4_desc}
         </p>
       </div>
     </div>

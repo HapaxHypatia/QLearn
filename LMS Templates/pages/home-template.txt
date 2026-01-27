@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>{site_title}</title>
+  <title>{course_title}</title>
 </head>
 
 <div id="main" style="
@@ -13,14 +13,14 @@
   box-sizing: border-box;
 ">
 
-  <!-- HERO -->
+  <!-- banner -->
   <div style="
     background:
       linear-gradient(
         rgba(0,0,0,0.45),
         rgba(0,0,0,0.45)
       ),
-      url('{hero_image}');
+      url('{banner_image_qlearn}');
     background-size:cover;
     background-position:center;
     text-align:center;
@@ -31,7 +31,7 @@
       margin:0;
       font-size:clamp(2rem, 4vw, 3rem);
     ">
-      {site_title}
+      {course_title}
     </h1>
     <p style="
       margin:12px auto 0;

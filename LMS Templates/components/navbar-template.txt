@@ -37,7 +37,7 @@
       gap:12px;
     ">
 
-      <a href="{nav_home_url}" style="
+      <a href="{home_url}" style="
         display:inline-block;
         padding:12px 18px;
         background:{navbar_button_default};
@@ -48,7 +48,7 @@
         font-weight:400;
       ">Course Home</a>
 
-      <a href="{nav_class_url}" style="
+      <a href="{class_url}" style="
         display:inline-block;
         padding:12px 18px;
         background:{navbar_button_default};
@@ -59,7 +59,7 @@
         font-weight:400;
       ">Class Page</a>
 
-      <a href="{nav_assessment_url}" style="
+      <a href="{assessment_url}" style="
         display:inline-block;
         padding:12px 18px;
         background:{navbar_button_primary};
@@ -84,7 +84,7 @@
 
         <div style="padding-top:6px;">
 
-          <a href="{units_unit 1_url}" style="
+          <a href="{unit1_url}" style="
             display:inline-block;
             padding:12px 18px;
             background:{navbar_button_dropdown};
@@ -95,7 +95,7 @@
             font-weight:400;
           ">Unit 1</a>
 
-          <a href="{units_unit 2_url}" style="
+          <a href="{unit2_url}" style="
             display:inline-block;
             padding:12px 18px;
             background:{navbar_button_dropdown};
@@ -106,7 +106,7 @@
             font-weight:400;
           ">Unit 2</a>
 
-          <a href="{units_unit 3_url}" style="
+          <a href="{unit3_url}" style="
             display:inline-block;
             padding:12px 18px;
             background:{navbar_button_dropdown};
@@ -117,7 +117,7 @@
             font-weight:400;
           ">Unit 3</a>
 
-          <a href="{units_unit 4_url}" style="
+          <a href="{unit4_url}" style="
             display:inline-block;
             padding:12px 18px;
             background:{navbar_button_dropdown};
