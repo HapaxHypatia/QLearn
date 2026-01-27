@@ -47,42 +47,23 @@
 <!-- HAMBURGER NAVIGATION -->
 <!-- ===================== -->
 
-<details style="
-  background:#0F172A;
-  color:#F8FAFC;
-  padding:15px;
-  border-radius:14px;
-  margin:15px;
+<div id="navbar" style="
+background:#0F172A;
+color:#F8FAFC;
+padding:8px;
+border-radius:14px;
+margin-top:10px;
+display:flex;
+flex-wrap:wrap;
+gap:12px;
 ">
 
-  <summary style="
-    list-style:none;
-    cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    font-weight:400;
-    font-size: xx-large;
-  ">
-    <span>Course Navigation</span>
-    <span style="font-size:20px;">☰</span>
-  </summary>
+    <div style="display:flex;
+        flex-wrap:wrap;
+        gap:12px;
+        ">
 
-  <div id="navbar" style="
-    background:#0F172A;
-    color:#F8FAFC;
-    padding:8px;
-    border-radius:14px;
-    margin-top:10px;
-  ">
-
-    <div style="
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    ">
-
-      <a href="#" style="
+        <a href="#" style="
         display:inline-block;
         padding:12px 18px;
         background:#1E293B;
@@ -91,9 +72,9 @@
         border-radius:10px;
         border:1px solid #334155;
         font-weight:400;
-      ">Course Home</a>
+        ">Course Home</a>
 
-      <a href="#" style="
+        <a href="#" style="
         display:inline-block;
         padding:12px 18px;
         background:#1E293B;
@@ -102,9 +83,9 @@
         border-radius:10px;
         border:1px solid #334155;
         font-weight:400;
-      ">Class Page</a>
+        ">Class Page</a>
 
-      <a href="#" style="
+        <a href="#" style="
         display:inline-block;
         padding:12px 18px;
         background:#1D4ED8;
@@ -114,9 +95,10 @@
         border:1px solid #334155;
         font-weight:400;
         text-align:center;
-      ">Assessment</a>
+        ">Assessment</a>
+    </div>
 
-      <details style="min-width:200px; text-align:center;">
+    <details style="min-width:200px; text-align:center;">
         <summary style="
           padding:12px 18px;
           background:#1D4ED8;
@@ -174,71 +156,67 @@
           ">Unit 4</a>
 
         </div>
-      </details>
-      <details style="min-width:200px; text-align:center;">
-        <summary style="
-          padding:12px 18px;
-          background:#1D4ED8;
-          color:#ffffff;
-          border-radius:10px;
-          border:1px solid #334155;
-          font-weight:400;
-          cursor:pointer;
-        ">Resources</summary>
+        </details>
 
-        <div style="padding-top:6px;">
-
-          <a href="https://qed05.instructure.com/courses/16820/pages/reference-grammar?module_item_id=5443277" style="
-            display:inline-block;
+        <details style="min-width:200px; text-align:center;">
+          <summary style="
             padding:12px 18px;
-            background:#3B82F6;
+            background:#1D4ED8;
             color:#ffffff;
-            text-decoration:none;
             border-radius:10px;
             border:1px solid #334155;
             font-weight:400;
-          ">Grammar</a>
+            cursor:pointer;
+          ">Resources</summary>
 
-          <a href="https://qed05.instructure.com/courses/16820/pages/cultural?module_item_id=5443445" style="
-            display:inline-block;
-            padding:12px 18px;
-            background:#3B82F6;
-            color:#ffffff;
-            text-decoration:none;
-            border-radius:10px;
-            border:1px solid #334155;
-            font-weight:400;
-          ">Cultural</a>
+          <div style="padding-top:6px;">
 
-          <a href="https://qed05.instructure.com/courses/16820/pages/revision?module_item_id=5443443" style="
-            display:inline-block;
-            padding:12px 18px;
-            background:#3B82F6;
-            color:#ffffff;
-            text-decoration:none;
-            border-radius:10px;
-            border:1px solid #334155;
-            font-weight:400;
-          ">Revision</a>
+            <a href="https://qed05.instructure.com/courses/16820/pages/reference-grammar?module_item_id=5443277" style="
+              display:inline-block;
+              padding:12px 18px;
+              background:#3B82F6;
+              color:#ffffff;
+              text-decoration:none;
+              border-radius:10px;
+              border:1px solid #334155;
+              font-weight:400;
+            ">Grammar</a>
 
-          <a href="https://qed05.instructure.com/courses/16820/pages/extension?module_item_id=5443444" style="
-            display:inline-block;
-            padding:12px 18px;
-            background:#3B82F6;
-            color:#ffffff;
-            text-decoration:none;
-            border-radius:10px;
-            border:1px solid #334155;
-            font-weight:400;
-          ">Extension</a>
+            <a href="https://qed05.instructure.com/courses/16820/pages/cultural?module_item_id=5443445" style="
+              display:inline-block;
+              padding:12px 18px;
+              background:#3B82F6;
+              color:#ffffff;
+              text-decoration:none;
+              border-radius:10px;
+              border:1px solid #334155;
+              font-weight:400;
+            ">Cultural</a>
 
-        </div>
-      </details>
+            <a href="https://qed05.instructure.com/courses/16820/pages/revision?module_item_id=5443443" style="
+              display:inline-block;
+              padding:12px 18px;
+              background:#3B82F6;
+              color:#ffffff;
+              text-decoration:none;
+              border-radius:10px;
+              border:1px solid #334155;
+              font-weight:400;
+            ">Revision</a>
 
+            <a href="https://qed05.instructure.com/courses/16820/pages/extension?module_item_id=5443444" style="
+              display:inline-block;
+              padding:12px 18px;
+              background:#3B82F6;
+              color:#ffffff;
+              text-decoration:none;
+              border-radius:10px;
+              border:1px solid #334155;
+              font-weight:400;
+            ">Extension</a>
+          </div>
+        </details>
     </div>
-  </div>
-</details>
-
 
 <!-- UNIT CARDS -->
 

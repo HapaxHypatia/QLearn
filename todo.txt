@@ -4,9 +4,12 @@ TODO Unit page templates
 TODO Assessment page templates
 TODO lesson/activity page templates
 TODO fix up class page
-TODO Don't hide navbar on homepage
 TODO Cards template for 2 cards only
 TODO images for each course and unit
+TODO cards only linked on image not caption
+
+
+TODO units codes have changed in new csv, update
 
 
 
