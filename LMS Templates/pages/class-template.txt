@@ -1,3 +1,7 @@
+navbar
+cards
+$
+
 <div id="main" style="
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;

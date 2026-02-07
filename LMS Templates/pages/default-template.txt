@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>{course_title}</title>
-</head>
-
+navbar
+$
 <div id="main" style="
   margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -16,9 +11,9 @@
 
 {navbar-component}
 
-<main style="padding:20px; max-width:1100px; margin:auto;">
+<div id="main-content" style="padding:20px; max-width:1100px; margin:auto;">
 
-  <section style="
+  <div style="
     background:{page_section};
     border:1px solid {page_border};
     border-radius:14px;
@@ -32,7 +27,7 @@
       Page Intro
     </p>
 
-  </section>
+  </div>
 
   <div style="
     background:{page_card};
@@ -73,17 +68,6 @@
 
   </div>
 
-</main>
-
-<div id="footer" style="
-  margin:20px;
-  padding:16px;
-  text-align:center;
-  color:{text_muted};
-  font-size:14px;
-">
-  Footer Text
 </div>
 
 </div>
-</html>

@@ -1,6 +1,21 @@
 import json
 import os
 import csv
+import sys
+import traceback
+
+def format_traceback_with_locals(exc):
+    traceback_segments = traceback.format_exception(exc)
+    traceback_string = traceback_segments[0]
+    tb = exc.__traceback__
+    while tb is not None:
+        locals_dict = {k: v for k, v in tb.tb_frame.f_locals.items() if not k.startswith("__")}
+        traceback_segment = traceback.format_tb(tb)[0]
+        traceback_string += traceback_segment
+        traceback_string += "  -> local variables: " + str(locals_dict) + "\n"
+        tb = tb.tb_next
+    traceback_string += traceback_segments[-1]
+    return traceback_string
 
 
 def flatten_dict(d, parent_key="", sep="_"):
@@ -19,46 +34,75 @@ def flatten_dict(d, parent_key="", sep="_"):
 
 
 def save_page(html, filename):
-  """Write the HTML string to a file."""
-  with open(filename, "w", encoding="utf-8") as f:
-    f.write(html)
+    """Write the HTML string to a file."""
+    with open(filename, "w", encoding="utf-8") as f:
+      f.write(html)
 
-def generate_component(component_type, component_styles, course_data, templates_dir="./LMS Templates"):
-    template_file = os.path.join(templates_dir, f"components/{component_type}-template.txt")
+
+def generate_component(component_type, component_styles, course_data, testing, templates_dir="./LMS Templates"):
+    '''
+    Generates html for a component within a page
+    :param component_type:
+    :param component_styles:
+    :param course_data:
+    :param templates_dir:
+    :return:
+    '''
+    template_file = f"./LMS Templates/components/{component_type}-template.txt"
     with open(template_file, encoding="utf-8") as f:
       template = f.read()
+      if testing:
+        template = template.replace("_qlearn", "_local")
       html = template.format(**course_data, **component_styles)
     return html
 
 
-def generate_page(course_id, page_type, styles, data, templates_dir="./LMS Templates"):
+def generate_page(course_code, page_type, styles, data, testing):
     """
     Generates a page for a given course_id and page_type ('home' or 'default').
     Returns the fully formatted HTML as a string.
     """
     # Load template
-    template_file = os.path.join(templates_dir, f"pages/{page_type}-template.txt")
+    template_file = f"./LMS Templates/pages/{page_type}-template.txt"
     with open(template_file, encoding="utf-8") as f:
-        template = f.read()
+        template_file_contents = f.read()
 
-    # Create standard components
-    data["navbar-component"] = generate_component("navbar", styles, data, templates_dir)
-    data["cards-component"] = generate_component("cards", styles, data, templates_dir)
+    # Get list of required components
+    components, template = template_file_contents.split("$")
+    if testing:
+      template = template.replace("_qlearn", "_local")
+    components = components.split()
 
-    # Format the template with palette and site data
+    # Create required components and add to data
+    for comp in components:
+        data[f'{comp}-component'] = generate_component(comp, styles, data, testing)
+
+    # Format the template with palette and data
     html = template.format(**data, **styles)
+    if testing:
+      html = testing[0]+html+testing[1]
 
     # Save page
-    filename = f"LMS Templates/{course_id}/{course_id}_{page_type}.html"
+    filename = f"LMS Templates/{course_code}/{course_code}_{page_type}.html"
+    if testing:
+      filename = f"LMS Templates/{course_code}/{course_code}_{page_type}_test.html"
+    else:
+      filename = f"LMS Templates/{course_code}/{course_code}_{page_type}.html"
     save_page(html, filename)
 
     return html
 
 
-# -------------------------
-# Main script
-# -------------------------
 if __name__ == "__main__":
+    testing = False
+    test_start = ('<!DOCTYPE html>\n<html lang="en">\n'
+                  '<head>\n'
+                  '<meta charset="UTF-8">\n'
+                  '</head>'
+                  '<body>')
+    test_end = ("</body>\n"
+                "</html>")
+
 
     # Load palettes and sitedata once
     sitedata = {}
@@ -74,25 +118,33 @@ if __name__ == "__main__":
     with open(os.path.join("css/palettes.json"), encoding="utf-8") as f:
         palettes = json.load(f)
 
-    course_ids = [x for x in sitedata.keys()]
+    config = input("Enter run type:\n"
+                   "1. Default\n"
+                   "2. All pages Qlearn\n"
+                   "3. Single page Qlearn\n"
+                   "4. All pages local\n"
+                   "5. Single Page Local\n>> ")
+
+    if int(config) > 3:
+      testing = (test_start, test_end)
+
+    if config in "35":
+      course_ids = [input("Enter course ID")]
+      pages = [input("Enter page")]
+    else:
+      course_ids = [x for x in sitedata.keys()]
+      pages = ['home', 'default', 'class', 'unit']
 
     for course_id in course_ids:
         data = sitedata[course_id]
         course_styles = palettes[data["style_code"]]
         styles_flat = flatten_dict(course_styles)
-
         code = data["style_code"]
 
-        # Generate homepage
-        html_home = generate_page(code, "home", styles_flat , data)
+        for page in pages:
+          try:
+            generate_page(code, page, styles_flat, data, testing)
+            print(f"Successfully generated {page} page for {data["course_title"]} course.")
+          except Exception as e:
+            sys.exit(format_traceback_with_locals(e))
 
-        # # Generate default page
-        html_default = generate_page(code, "default", styles_flat , data)
-        #
-        # Generate class page
-        html_class = generate_page(code, "class", styles_flat , data)
-        #
-        # # Generate unit page
-        html_unit = generate_page(code, "unit", styles_flat , data)
-
-    # print("All pages generated successfully.")
