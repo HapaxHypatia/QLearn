@@ -31,56 +31,24 @@ def extract_style_code(html: str) -> str:
     return match.group(1).strip()
 
 
-def convert_html_to_template_auto(html: str, palettes: dict) -> tuple:
-    """
-    Extract style code from metadata block,
-    convert styled HTML to template placeholders,
-    and remove metadata block from template output.
+def convert_styled_page(input_path, output_template_name, palettes):
+  """
+  Reads a styled HTML file, converts it to a template using auto-detection,
+  and saves the result as a template file.
+  """
+  # Read the styled HTML
+  with open(input_path, encoding="utf-8") as f:
+    styled_html = f.read()
 
-    Returns:
-    (style_code, converted_html)
-    """
+  # Auto-convert to template
+  template_html, style_code = convert_html_to_template_auto(styled_html, palettes)
 
-    style_code = extract_style_code(html)
+  # Save the template
+  output_path = f"LMS Templates/pages/{output_template_name}.txt"
+  with open(output_path, "w", encoding="utf-8") as f:
+    f.write(template_html)
 
-    flat_palette = flatten_dict(palettes[style_code])
-
-    converted_html = convert_styled_html_to_template(
-    html,
-    flat_palette
-    )
-
-    # Remove entire metadata block from template output
-    converted_html = re.sub(
-    r'<!--\s*=====================.*?=====================\s*-->',
-    '',
-    converted_html,
-    flags=re.DOTALL
-    )
-
-    return style_code, converted_html
-
-
-def convert_styled_html_to_template(html: str, flat_palette: dict) -> str:
-    """
-    Replace hard-coded palette colour values with template placeholders.
-    """
-
-    updated_html = html
-
-    # Sort by length to prevent short hex collisions (#000 inside #000000)
-    for key, value in sorted(flat_palette.items(), key=lambda x: -len(str(x[1]))):
-      if not isinstance(value, str):
-        continue
-
-      colour = value.lower()
-      placeholder = "{" + key + "}"
-
-      pattern = re.compile(re.escape(colour), re.IGNORECASE)
-      updated_html = pattern.sub(placeholder, updated_html)
-    html = "$"+html
-    return updated_html
-
+  print(f"Template generated from style {style_code} and saved to {output_path}")
 
 def flatten_dict(d, parent_key="", sep="_"):
     """
@@ -244,6 +212,8 @@ def get_run_configuration():
     "(Or paste a full admin command like 'generate|local|16820|home')\n>> "
   ).strip()
 
+  if raw == "x":
+    sys.exit()
   # --- Check if it looks like a full admin command ---
   if "|" in raw:
     return parse_admin_command(raw)
@@ -294,15 +264,6 @@ def get_run_configuration():
   return config
 
 if __name__ == "__main__":
-    # Local testing tags
-    test_start = ('<!DOCTYPE html>\n<html lang="en">\n'
-                  '<head>\n'
-                  '<meta charset="UTF-8">\n'
-                  '</head>'
-                  '<body>')
-    test_end = ("</body>\n"
-                "</html>")
-
     # Load palettes and sitedata once
     sitedata = {}
     with open('data/coursedata.csv', 'r',  encoding='utf-8-sig') as f:
@@ -317,52 +278,46 @@ if __name__ == "__main__":
     with open(os.path.join("css/palettes.json"), encoding="utf-8") as f:
       palettes = json.load(f)
 
-    config=get_run_configuration()
+    while True:
+      config=get_run_configuration()
 
-    if config["mode"] == "convert":
-      input_path = config.get("input_path") or input("Enter path:\n>> ")
-      template_name = config.get("template_name") or input("Template name:\n>> ")
+      if config["mode"] == "convert":
+        convert_styled_page(config_dict["input_path"], config_dict["output_name"], palettes)
+        sys.exit()
 
-      with open(input_path, encoding="utf-8") as f:
-        styled_html = f.read()
+      # Local testing tags
+      test_start = ('<!DOCTYPE html>\n<html lang="en">\n'
+                    '<head>\n'
+                    '<meta charset="UTF-8">\n'
+                    '</head>'
+                    '<body>')
+      test_end = ("</body>\n"
+                  "</html>")
 
-      style_code, template_html = convert_html_to_template_auto(
-        styled_html,
-        palettes
-      )
+      testing = (test_start, test_end) if config["environment"] == "local" else False
 
-      output_path = f"LMS Templates/pages/{template_name}.txt"
+      if config["course_scope"] == "single":
+        course_ids = [config["course_id"]]
+      else:
+        course_ids = list(sitedata.keys())
 
-      with open(output_path, "w", encoding="utf-8") as f:
-        f.write(template_html)
-
-      print(f"✔ Converted successfully ({style_code})")
-      sys.exit()
-
-    testing = (test_start, test_end) if config["environment"] == "local" else False
-
-    if config["course_scope"] == "single":
-      course_ids = [config["course_id"]]
-    else:
-      course_ids = list(sitedata.keys())
-
-    if config["page_scope"] == "single":
-      pages = [config["page_name"]]
-    else:
-      filenames = os.listdir("LMS Templates/pages")
-      pages = [x[:-13] for x in filenames if x.endswith("-template.txt")]
+      if config["page_scope"] == "single":
+        pages = [config["page_name"]]
+      else:
+        filenames = os.listdir("LMS Templates/pages")
+        pages = [x[:-13] for x in filenames if x.endswith("-template.txt")]
 
 
-    for course_id in course_ids:
-        data = sitedata[course_id]
-        course_styles = palettes[data["style_code"]]
-        styles_flat = flatten_dict(course_styles)
-        code = data["style_code"]
+      for course_id in course_ids:
+          data = sitedata[course_id]
+          course_styles = palettes[data["style_code"]]
+          styles_flat = flatten_dict(course_styles)
+          code = data["style_code"]
 
-        for page in pages:
-          try:
-            generate_page(code, page, styles_flat, data, testing)
-            print(f"Successfully generated {page} page for {data["course_title"]} course.")
-          except Exception as e:
-            sys.exit(format_traceback_with_locals(e))
+          for page in pages:
+            try:
+              generate_page(code, page, styles_flat, data, testing)
+              print(f"Successfully generated {page} page for {data["course_title"]} course.")
+            except Exception as e:
+              sys.exit(format_traceback_with_locals(e))
 
