@@ -8,3 +8,8 @@ TODO cards only linked on image not caption
 
 TODO Images don't scale properly because object fit and background size properties are stripped
 
+TODO table component
+TODO Image component
+TODO Embedded media component
+TODO templates for assignments, quizzes
+

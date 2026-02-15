@@ -42,11 +42,6 @@ def save_page(html, filename):
 def generate_component(component_type, component_styles, course_data, testing, templates_dir="./LMS Templates"):
     '''
     Generates html for a component within a page
-    :param component_type:
-    :param component_styles:
-    :param course_data:
-    :param templates_dir:
-    :return:
     '''
     template_file = f"./LMS Templates/components/{component_type}-template.txt"
     with open(template_file, encoding="utf-8") as f:
@@ -79,6 +74,14 @@ def generate_page(course_code, page_type, styles, data, testing):
 
     # Format the template with palette and data
     html = template.format(**data, **styles)
+    metadata_block = (
+      "<!-- ===================== -->\n"
+      f"<!-- Style code: {data['style_code']} -->\n"
+      f"<!-- Course title: {data['course_title']} -->\n"
+      "<!-- ===================== -->\n"
+    )
+
+    html = metadata_block + html
     if testing:
       html = testing[0]+html+testing[1]
 
@@ -103,17 +106,16 @@ if __name__ == "__main__":
     test_end = ("</body>\n"
                 "</html>")
 
-
     # Load palettes and sitedata once
     sitedata = {}
     with open('data/coursedata.csv', 'r',  encoding='utf-8-sig') as f:
-      dict_reader = csv.DictReader(f)
-      headers = dict_reader.fieldnames
-      for line in dict_reader:
-        course_id = line["course_id"]
-        sitedata[course_id] = {}
-        for header in headers[1:]:
-          sitedata[course_id][header] = line[header]
+        dict_reader = csv.DictReader(f)
+        headers = dict_reader.fieldnames
+        for line in dict_reader:
+            course_id = line["course_id"]
+            sitedata[course_id] = {}
+            for header in headers[1:]:
+              sitedata[course_id][header] = line[header]
 
     with open(os.path.join("css/palettes.json"), encoding="utf-8") as f:
         palettes = json.load(f)
@@ -133,7 +135,7 @@ if __name__ == "__main__":
       pages = [input("Enter page")]
     else:
       course_ids = [x for x in sitedata.keys()]
-      pages = ['home', 'default', 'class', 'unit']
+      pages = ['home', 'default', 'class', 'unit', 'sample']
 
     for course_id in course_ids:
         data = sitedata[course_id]

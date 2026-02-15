@@ -20,13 +20,7 @@ $
     padding:24px;
     margin-bottom:24px;
   ">
-
     <h1 style="margin-top:0;">Page Heading</h1>
-
-    <p style="color:{text_muted};">
-      Page Intro
-    </p>
-
   </div>
 
   <div style="
