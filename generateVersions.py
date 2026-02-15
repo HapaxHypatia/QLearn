@@ -19,34 +19,58 @@ def format_traceback_with_locals(exc):
     return traceback_string
 
 
-def extract_style_code(html: str) -> str:
-    """
-    Extract style_code from embedded metadata comment.
-    """
-
-    match = re.search(r'<!--\s*Style code:\s*(.*?)\s*-->', html)
-    if not match:
-        raise ValueError("No style code metadata found in HTML.")
-
-    return match.group(1).strip()
+import re
+import os
 
 
-def convert_styled_page(input_path, output_template_name, palettes):
+def convert_styled_page_to_template(input_path, output_name, palettes):
   """
-  Reads a styled HTML file, converts it to a template using auto-detection,
-  and saves the result as a template file.
+  Converts a fully styled HTML page into a reusable template:
+  1. Detects the style code from the marker comment.
+  2. Replaces all palette-specific colours with placeholders.
+  3. Saves the resulting template in LMS Templates/pages/.
+
+  Args:
+      input_path (str): Path to the styled HTML file.
+      output_template_name (str): Filename (without extension) for the saved template.
+      palettes (dict): Loaded palettes dictionary from palettes.json.
+
+  Returns:
+      str: Path to the saved template.
   """
   # Read the styled HTML
   with open(input_path, encoding="utf-8") as f:
-    styled_html = f.read()
+    html = f.read()
 
-  # Auto-convert to template
-  template_html, style_code = convert_html_to_template_auto(styled_html, palettes)
+  # Detect style code from the comment marker
+  match = re.search(r"<!--\s*Style code:\s*(\d+)\s*-->", html)
+  style_code = match.group(1)
 
-  # Save the template
-  output_path = f"LMS Templates/pages/{output_template_name}.txt"
+  # Get the palette colours
+  palette = palettes.get(style_code)
+  flat_palette = flatten_dict(palette)
+
+  # Remove metadata comment block
+  html = re.sub(
+    r"<!--\s*={5,}\s*-->(.|\n)*?<!--\s*={5,}\s*-->",
+    "",
+    html,
+    flags=re.MULTILINE
+  )
+
+  # Replace colours in HTML with placeholders
+  def replace_colour(match):
+    colour = match.group(0).lower()
+    placeholder = flat_palette.get(colour, colour)
+    return "{" + placeholder + "}"
+
+  # Match hex colours (e.g., #ffffff)
+  html_template = re.sub(r"#[0-9a-fA-F]{6}", replace_colour, html)
+
+  # Save template
+  output_path = f"LMS Templates/pages/{output_name}.txt"
   with open(output_path, "w", encoding="utf-8") as f:
-    f.write(template_html)
+    f.write(html_template)
 
   print(f"Template generated from style {style_code} and saved to {output_path}")
 
@@ -157,28 +181,17 @@ def parse_admin_command(cmd):
     "input_path": None
   }
 
-  if not parts:
-    raise ValueError("Empty command string")
-
   mode = parts[0].lower()
-  if mode not in ("generate", "convert"):
-    raise ValueError(f"Invalid mode '{mode}'. Must be 'generate' or 'convert'")
   config["mode"] = mode
 
+  # Convert
   if mode == "convert":
-    if len(parts) != 2:
-      raise ValueError("Convert mode requires exactly one argument: path_to_file")
-    config["input_path"] = parts[1].strip()
+    config["input_path"], config["output_name"]= parts[1].strip(), parts[2].strip()
     return config
 
-  # mode == "generate"
-  if len(parts) != 4:
-    raise ValueError("Generate mode requires exactly 4 parts: generate|env|course_id/all|page_name/all")
-
+  # Generate
   env, course_input, page_input = parts[1:4]
   env = env.lower()
-  if env not in ("qlearn", "local"):
-    raise ValueError(f"Invalid environment '{env}'. Must be 'qlearn' or 'local'")
   config["environment"] = env
 
   # Determine course scope
@@ -282,7 +295,7 @@ if __name__ == "__main__":
       config=get_run_configuration()
 
       if config["mode"] == "convert":
-        convert_styled_page(config_dict["input_path"], config_dict["output_name"], palettes)
+        convert_styled_page_to_template(config["input_path"],config["output_name"], palettes)
         sys.exit()
 
       # Local testing tags
